@@ -15,7 +15,7 @@ DVI2PS=dvips -t landscape -x 707
 PS2PDF=ps2pdf -dEmbedAllFonts#true
 
 ## Basename for result
-TARGET=artigo
+TARGET=lapd1
 
 ## BibTeX files
 BIB=$(wildcard *.bib)
@@ -75,7 +75,7 @@ $(TARGET).dvi2:	  $(TARGET).dvi
 $(TARGET).dvi:	  $(TARGET).tex $(TARGET).bbl
 
 ## Extensions
-EXTS=aux toc idx ind ilg log out lof lot lol bbl blg
+EXTS=aux toc idx ind ilg log out lof lot lol bbl blg pdf
 
 ##clean
 clean:
