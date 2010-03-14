@@ -23,8 +23,8 @@
 
 \usepackage[pdftex]{hyperref}
 \hypersetup{%
-    a4paper = true,              % use A4 paper 
-    bookmarks = true,            % make bookmarks 
+    a4paper = true,              % use A4 paper
+    bookmarks = true,            % make bookmarks
     colorlinks = true,           % false: boxed links; true: colored links
     pdffitwindow = false,        % page fit to window when opened
     pdfpagemode = UseNone,       % do not show bookmarks
@@ -73,14 +73,20 @@ Nuno Polónia\\
 \begin{abstract}
 \end{abstract}
 
+%http://www.dmoz.org/Computers/Data_Formats/Graphics/Vector/SVG/
 \section{Introduction}\label{sec:intro}
 Scalable Vector Graphics (SVG) is an XML markup language specification for describing two-dimensional vector graphics.\\
 W3C started developing it in 1999 after Adobe and Microsoft submitted two different and competing standards, the Precision Graphic Markup Language (PGML) and the Vector Markup Language (VML) respectively, both in 1998.\\
 
-
 \subsection{Vector and Raster Graphics}
-Vector graphics rely on the use of mathematical equations to describe primitives which are used to construct images. Being 
+Vector graphics rely on the use of mathematical equations to describe geometrical primitives from which the images are made of. This allows them to be scaled to a larger or smaller size without any quality loss (see Figure \ref{fig:vector_vs_raster}). Edition is also easier because every new point can be recalculated. Raster images, or bitmaps, are made up of a data structure composed of pixels which have color and position information. These kind of images have no semantic meaning, and a pixel is an entity by itself: it has no ``awareness'' of itself and what kind of object or objects it is part of. On the contrary, SVG and most vector image formats are defined in a way that their composing elements can be freely and independently manipulated without interfering with other parts of the image.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=40mm]{images/vector_bitmap.png}
+	\caption{Vector Image vs Raster Image}
+	\label{fig:vector_vs_raster}
+\end{figure}
 
 \section{XML Vector image formats}
 \subsection{Vector Image Formats}
@@ -92,16 +98,24 @@ PGML first appeared in 1998, as an initial draft proposed to W3C, despite of not
 
 \subsubsection{Vector Markup Language (VML)}
 
-As with PGML, VML was submitted as a proposed standard to the W3C in 1998 by Autodesk, Hewlett-Packard, Macromedia, Microsoft, and Visio.
+As with PGML, VML was submitted as a proposed standard to the W3C in 1998 by Autodesk, Hewlett-Packard, Macromedia, Microsoft, and Visio.\\
 
-VML was designed to support the markup of vector graphic information in the same way that HTML supports the markup of textual information. Within VML the content is composed of paths described using connected lines and curves. The markup provides both semantic and presentation information about these paths.
+VML was designed to support the markup of vector graphic information in the same way that HTML supports the markup of textual information. Within VML the content is composed of paths described using connected lines and curves. The markup provides both semantic and presentation information about these paths.\\
 
 VML is mainly used by Microsoft and its related products, such as Microsoft Word and Internet Explorer.
 
-\section{Model Description}
+\section{SVG}
+
+The SVG specification is an open standard that has been under development by the World Wide Web Consortium (W3C) since 1999. There are three different SVG specifications: 1.0, 1.1, 1.2 Tiny. The current, and most widely adopted is 1.1, as 1.2 is still a working draft.
+
+\subsection{Model Description}
 
 SVG is a markup language used to describe two-dimensional graphics and graphical applications. SVG is a royalty-free, vendor-neutral open standard developed under the W3C (World Wide Web Consortium) Process, with a strong development support by Adobe and other major companies.
-Being an XML language, SVG benefits from techniques and technologies applicable to other XML documents, such as XSLT transformations, embedding an SVG document in another XML documents using namespaces, and even styling through CSS stylesheets.
+Being an XML language, SVG benefits from techniques and technologies applicable to other XML documents, such as XSLT transformations, embedding an SVG document in another XML documents using namespaces and even styling through CSS stylesheets.\\
+
+SVG is composed of three types of graphical objects: Vector images, Raster images and Text.\\
+
+Graphical objects can be grouped, styled, transformed, and composited into previously rendered objects. Text can be in any XML namespace suitable to the application, which enhances searchability and accessibility of the SVG graphics. The feature set includes nested transformations, clipping paths, alpha masks, filter effects, template objects and extensibility. ISTO FOI COPIADO DIRECTAMENTE DA WIKIPEDIA; MODIFICAR!!!
 
 \subsection{Elements}
 
@@ -112,20 +126,31 @@ SVG uses both self-closing and content elements. For example, a \verb!<rect>! el
 
 \subsection{Attributes}
 
-Attributes are a big part of the SVG specification. As SVG is a language that describes a drawing (composed by a series of graphical elements, such as rectangles, ellipses, and others) as an XML document, most of its elements are described by their attributes
+Attributes are a big part of the SVG specification. As SVG is a language that describes a drawing (composed by a series of graphical elements, such as rectangles, ellipses, and others) as an XML document, most of its elements are described by their attributes and their respective values.
 
 \section{Schema}
 
-As SVG does not have a DTD, it is not necessary to specify a DOCTYPE. There is, however, a schema available for validation based on the RelaxNG schema\footnote{RelaxNG is a namespace-aware schema language that uses the datatypes from XML Schema Part 2. This allows namespaces and modularity to be much more naturally expressed than using tradicional DTD syntax.}
+The current SVG specification, SVG 1.1, has a DTD available for validation. As such, a stand-alone SVG document using this specification should have the correct DOCTYPE definition (see \ref{sec:svg11doctype}) specified to be considered a valid SVG document.\\
+
+As SVG 1.2 does not have a DTD\cite{svg_no_dtd}, it is not necessary to specify a DOCTYPE. There is, however, a schema available for validation based on the RelaxNG schema\footnote{RelaxNG is a namespace-aware schema language that uses the datatypes from XML Schema Part 2. This allows namespaces and modularity to be much more naturally expressed than using tradicional DTD syntax.}
 
 \section{Final Remarks}
 
 SVG is a heavily documented, greatly supported markup language for representing vectorial images. It is extremely versatile, being able to be used for both on-screen and print with losing any quality.
 
 %% auto bibliographic list 
-\renewcommand{\bibname}{Referências}
+\renewcommand{\bibname}{References}
 \bibliographystyle{unsrt-pt}
 \bibliography{lapd1}
+
+\newpage
+\section*{SVG 1.1 DOCTYPE}\label{sec:svg11doctype}
+\tiny{
+\begin{verbatim}
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+	"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+\end{verbatim}
+}
 
 \end{document}
 
