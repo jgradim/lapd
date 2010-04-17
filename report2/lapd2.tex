@@ -1,0 +1,85 @@
+\documentclass[twocolumn,twoside,10pt,a4paper]{article}
+
+\usepackage[english]{babel}  % portuguese
+\usepackage{graphicx}           % images: .png or .pdf w/ pdflatex; .eps w/ latex
+
+%% For iso-8859-1 (latin1), comment next line and uncomment the second line
+\usepackage[utf8]{inputenc}
+
+\usepackage{times}              % PS fonts
+\usepackage[T1]{fontenc}        % T1 fonts
+%\usepackage{lastpage}           % to have lastpage in headers
+\usepackage{url}                % urls
+
+% geometry package
+\usepackage[outer=20mm,inner=30mm,vmargin=20mm,includehead,includefoot,headheight=15pt]{geometry}
+
+%% space between columns
+\columnsep 10mm
+
+% avoid widows and orphans
+\clubpenalty=300
+\widowpenalty=300
+
+\usepackage[pdftex]{hyperref}
+\hypersetup{%
+    a4paper = true,              % use A4 paper
+    bookmarks = true,            % make bookmarks
+    colorlinks = true,           % false: boxed links; true: colored links
+    pdffitwindow = false,        % page fit to window when opened
+    pdfpagemode = UseNone,       % do not show bookmarks
+    pdfpagelayout = SinglePage,  % displays a single page
+    pdfpagetransition = Replace, % page transition
+    linkcolor=blue,              % hyperlink colors
+    urlcolor=blue,
+    citecolor=blue,
+    anchorcolor=green
+}
+
+\usepackage{indentfirst}       % indent also 1st paragraph
+
+\pagestyle{myheadings}         % Option to put page headers
+\markboth{{\small\it Scalable Vector Graphics}}
+{{\small\it Group 08, \today}}
+
+%\hyphenation{}                  % explicit hyphenation
+
+% entities
+\newcommand{\class}[1]{{\normalfont\slshape #1\/}}
+\newcommand{\svg}{\class{SVG}}
+\newcommand{\scada}{\class{SCADA}}
+\newcommand{\scadadms}{\class{SCADA/DMS}}
+
+\title{Scalable Vector Graphics}
+
+\author{João Gradim\\
+\small Faculdade de Engenharia da Universidade do Porto,\\[-0.8ex]
+\small R.\ Dr.\ Roberto Frias, 4200-465 Porto\\[-0.8ex]
+\small \texttt{ei05030@fe.up.pt}\\
+\and
+Nuno Polónia\\
+\small Faculdade de Engenharia da Universidade do Porto,\\[-0.8ex]
+\small R.\ Dr.\ Roberto Frias, 4200-465 Porto\\[-0.8ex]
+\small \texttt{ei05037@fe.up.pt}
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{plain}
+
+\begin{abstract}
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+%% auto bibliographic list 
+\renewcommand{\bibname}{References}
+\bibliographystyle{unsrt-pt}
+\bibliography{lapd2}
+
+\end{document}
+
+
