@@ -85,20 +85,22 @@ Nuno Polónia\\
 
 \begin{abstract}
 
-JSON is a lightweight data-interchange format, used often for serialization and data transmission across network connections, as an alternative to XML (REFERIR WIKIPEDIA e JSON.ORG). This projects aims to provide an XML stylesheet that is able to transform any XML document (as long as it is well-formed) to a JSON representation, while maintaining the original document structure.
+JSON is a lightweight data-interchange format, used often for serialization and data transmission across network connections, as an alternative to XML\cite{json_format}. This projects aims to provide an XML stylesheet that is able to transform any XML document (as long as it is well-formed) to a JSON representation, while maintaining the original document structure.
 
 \end{abstract}
-
 \section{Introduction}\label{sec:intro}
 
-JSON was specified by Douglas Crockford in the RFC 4627 in July of 2006\cite{rfc4627} (http://tools.ietf.org/html/rfc4627). It is an open, language-independent standard, based on a subset of the Javascript Language.
-It's simplicity and lightweightness turned it into the most commonly used format in serialization and data transmission for web apps. While XML is a more generic language which uses more syntactically complex structures  
 
+JSON was specified by Douglas Crockford in the RFC 4627 in July of 2006\cite{rfc4627}. It is an open, language-independent standard, based on a subset of the Javascript Language.
+It's simplicity and lightweightness turned it into the most commonly used format in serialization and data transmission for web apps. While XML is a more generic language which uses more syntactically complex structures, JSON relies only on two structures, a collection of name/value pairs and an ordered list of values\cite{json_format}, to represent objects. 
+With the crescent growth of websites functionalities and the need of faster response times, web developers rely on JSON for communication. Most of the API's available have both XML and JSON output. But some API's like the MusicBrainz or the Last.fm, only have output in XML.
+The purpose of this work is to create a conversion stylesheet from any well formed XML document to JSON without losing any of the information or structure of the data contained in the XML document. In the first chapter of this document the conditions of the XML documents accepted by the XSL stylesheet will be specified. In the second chapter we'll talk about the characteristics of the generated JSON output. In the third chapter the details of the XSL stylesheet are designated.
 \section{Valid Source Dialects}\label{sec:valid-source-dialects}
 
 This project supports virtually every existing XML document, as it does not require any specific elements, attributes or document structure. As long as the source document is well-formed, the stylesheet is able to produce a valid JSON representation of the aforementioned XML document, while maintaining its structure.
- 
+
 \section{JSON Output}\label{sec:json-output}
+
 
 JSON represents an object as an unordered collection of key/value pairs (also known as associative arrays, hashes or dictionaries) and ordered lists of objects or values (also know as arrays, or lists).
 
@@ -114,9 +116,9 @@ XML attribute nodes are represented as key/value pairs: the key is a string buil
 
 \subsection{Textual Content}
 
-XML text nodes are mapped to the \verb!"$text"! property of an object. If an element has multiple children text nodes, an index is appended to this key, creating as many keys as text nodes present: \verb!"$text1"!, \verb!"$text2"!,  etc.
+XML text nodes are mapped to the \verb!"$text"! property of an object. If an element has multiple children text nodes, an index is appended to this key, creating as many keys as text nodes present: \verb!"$text1"!, \verb!"$text2"!, etc.
 
-\section{XSLT Stylesheets}\label{sec:xslt-stylesheets}
+\section{XSLT Stylesheet}\label{sec:xslt-stylesheet}
 
 The transformation starts out by matching the root node and enclosing the whole transformation within a pair of brackets (\verb!{}!). A template is then applied that matches every element in the original document. This template is responsible for transforming an XML element into a JSON object, by opening and closing objects (\verb!{}!) and arrays (\verb![]!), and by separating different elements. During this process, the attributes are processed in order to add them to the element declaration. After processing the element's attributes, and text nodes, this template is applied recursively to the element's child nodes so that nested elements are accounted for.
 
@@ -125,10 +127,15 @@ The transformation starts out by matching the root node and enclosing the whole 
 Attribute values and text nodes are processed by a series of templates that ensure their validity and correct representation\cite{json_format}. An initial test is performed in order to determine if said value is a number: if true, the value is printed \textit{as is}; otherwise, the value is regarded as a string: the value in enclosed between doubles quotes and their contents are analyzed in order to escape invalid characters (backslash and double quotes).
 
 \subsection{Arrays}
-
 An XML element whose children all have have the same name would generate a JSON object with multiple equal keys. As JSON does not allow repeated keys in objects (the only valid key/value mapping would be the last one to be defined), these elements must be represented as an array of JSON objects. To handle these situations a template is applied, matching only if all the children nodes have the same name and the count of these number is greater than one.
 
 \section{Final Remarks}\label{sec:final-remarks}
+
+
+XSLT proves to be a very capable and efficient tool to manipulate XML documents. It revealed to be an intuitive XML manipulation tool, allowing for a level of abstraction where the only alternative would be to use a specialized parser, that could reveal itself as excessively heavy or prone to failure in face of certain situations.
+
+XML can be effectively represented as a JSON object without any loss of data or document structure (except for node order, which, depending on the implementation of the destiny language, can be lost, as hashes or associative arrays are often unordered, depending on the implementation).
+
 
 %% auto bibliographic list 
 \renewcommand{\bibname}{References}
