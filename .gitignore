@@ -1,0 +1,5 @@
+xml2json/log/*.log
+xml2json/tmp/**/*
+xml2json/doc/api
+xml2json/doc/app
+xml2json/public/*/*packaged*
