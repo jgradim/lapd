@@ -3,6 +3,7 @@ var dom_parser = new DOMParser();
 var res;
 $(document).ready(function(){
 
+  // import xslt stylesheet for live editor
   $.get('/xml2json.xsl', function(data) {
     xslt.importStylesheet(data);
   });

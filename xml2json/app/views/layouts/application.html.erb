@@ -10,6 +10,16 @@
     <%= javascript_include_tag 'application.js' %>
   </head>
   <body>
-    <%= yield %>
+    <div id="wrapper">
+      <header></header>
+      <nav>
+        <ul>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Live Editor", editor_path %></li>
+        </ul>
+      </nav>
+      <%= yield %>
+      <footer></footer>
+    </div>
   </body>
 </html>
