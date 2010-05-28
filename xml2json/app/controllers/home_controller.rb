@@ -5,5 +5,11 @@ class HomeController < ApplicationController
       format.html
     end
   end
+  
+  def editor
+    respond_to do |format|
+      format.html
+    end
+  end
 
 end
