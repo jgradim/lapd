@@ -1,3 +1,26 @@
+body {
+  
+}
+
+/*** LAYOUT SECTIONS ***/
+div#wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+header { height: 100px; }
+nav { height: 100px; }
+nav ul li {
+  float: left;
+  margin: 0 0 0 45px;
+  width: 260px;
+  text-align: center;
+}
+nav ul li a {
+  display: block;
+  padding: 10px 0;    
+}
+/*** END LAYOUT SECTIONS ***/
+
 div#warning { 
   position: absolute;
   display: none;
