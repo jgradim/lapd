@@ -1,0 +1,13 @@
+---
+javascripts:
+- base:
+  - jquery-1.4.2.min
+  - json2.min
+  - jquery.textarea
+  - modernizr-1.1.min
+  - progressive_enhancement
+  - application
+stylesheets:
+- base:
+  - reset
+  - styles
