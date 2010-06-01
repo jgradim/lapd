@@ -5,6 +5,7 @@ javascripts:
   - json2.min
   - jquery.textarea
   - modernizr-1.1.min
+  - jquery.placeholder.min
   - progressive_enhancement
   - application
 stylesheets:
