@@ -4,7 +4,7 @@ class Stat < ActiveRecord::Base
 
   def self.find_or_create(url)
     stat = Stat.find_by_url(url)
-    stat = Stat.create(:url => url) if !stat
+    stat = Stat.create(:url => url) if not stat
     stat
   end
 
