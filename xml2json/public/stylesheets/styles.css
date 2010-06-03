@@ -11,6 +11,7 @@ a, a:link, a:visited, a:hover { text-decoration: none; font-weight: bold; }
 div#wrapper {
   width: 960px;
   margin: 0 auto;
+  background: #eee;
 }
 
 header { height: 100px; }
@@ -20,27 +21,28 @@ nav { height: 100px; }
 nav ul li {
   float: left;
   position: relative;
-  margin: 0 0 0 45px;
+  margin: 0;
   width: 260px;
   text-align: center;
-  background: #c00;
-  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
+  background: #c00 url(../images/overlay-button.png) repeat-x;
 }
+nav ul li.selected { background: #c00 url(../images/overlay-button-reverse.png) repeat-x; }
+nav ul li:first-child { margin-left: 90px; -webkit-border-radius: 5px 0 0 5px; -moz-border-radius: 5px 0 0 5px; border-radius: 5px 0 0 5px; }
+nav ul li:last-child { -webkit-border-radius: 0 5px 5px 0; -moz-border-radius: 0 5px 5px 0; border-radius: 0 5px 5px 0; }
+
 nav ul li a {
   display: block;
   padding: 15px 0;
   color: #fff;
-  font-size: 1.3em;  
+  font-size: 1.3em;
 	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
 }
-nav ul li:hover  { top: 1px; }
-nav ul li:active { top: 2px; }
 
 section { padding: 10px; }
 
 /*** END LAYOUT SECTIONS ***/
 
-div#warning { 
+div#warning {
   position: absolute;
   display: none;
   opacity: 0.7;
@@ -79,3 +81,4 @@ section#api-converter textarea#json-result {
 }
 
 /*** END FORMS ***/
+
