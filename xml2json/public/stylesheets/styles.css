@@ -1,24 +1,42 @@
 body {
-  
+	font: normal normal normal 14px/16px Arial,Helvetica,sans-serif;
 }
+
+/*** ***/
+a, a:link, a:visited, a:hover { text-decoration: none; font-weight: bold; }
+/*** ***/
 
 /*** LAYOUT SECTIONS ***/
 div#wrapper {
   width: 960px;
   margin: 0 auto;
 }
+
 header { height: 100px; }
+
 nav { height: 100px; }
+
 nav ul li {
   float: left;
+  position: relative;
   margin: 0 0 0 45px;
   width: 260px;
   text-align: center;
+  background: #c00;
+  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
 }
 nav ul li a {
   display: block;
-  padding: 10px 0;    
+  padding: 15px 0;
+  color: #fff;
+  font-size: 1.3em;  
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
 }
+nav ul li:hover  { top: 1px; }
+nav ul li:active { top: 2px; }
+
+section { background: #ccc; padding: 10px; }
+
 /*** END LAYOUT SECTIONS ***/
 
 div#warning { 
@@ -32,4 +50,21 @@ div#warning {
   font-family: Arial,Helvetica,sans-serif;
   text-align: center;
 }
-textarea { margin: 0; padding: 0; border: 1px solid black; }
+textarea {
+  width: 450px;
+  height: 400px;
+  margin: 0 0 0 13px;
+  padding: 0;
+  border: 1px solid black;
+}
+
+/*** FORMS ***/
+form { width: 800px; margin: 0 0 0 55px; background: #ddd; }
+input#request-url {
+  width: 100%;
+  padding: 15px;
+  margin: 0 auto;
+  border: none;
+  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
+}
+/*** END FORMS ***/
