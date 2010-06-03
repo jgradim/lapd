@@ -17,6 +17,7 @@ class HomeController < ApplicationController
     @pretty_json = JSON.pretty_generate(JSON.parse(@json)) if @json
     respond_to do |format|
       format.html
+      format.json { render :text => @json }
     end
   end
 

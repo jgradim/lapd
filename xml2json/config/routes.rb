@@ -5,9 +5,12 @@ ActionController::Routing::Routes.draw do |map|
   
   # named routes
   map.editor  '/editor',  :controller => 'home', :action => 'editor'
-  map.convert '/convert', :controller => 'home', :action => 'convert'
+  map.convert '/convert.:format', :controller => 'home', :action => 'convert'
 
   # application root
   map.root :controller => 'home', :action => 'index'
+  
+  map.connect ':controller/:action/:id'
+  map.connect ':controller/:action/:id.:format'
   
 end
