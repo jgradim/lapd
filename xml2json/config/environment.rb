@@ -43,3 +43,4 @@ end
 
 require 'xml/xslt'
 require 'open-uri'
+require 'json'
