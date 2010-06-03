@@ -2,9 +2,11 @@ body {
 	font: normal normal normal 14px/16px Arial,Helvetica,sans-serif;
 }
 
-/*** ***/
+/*** LINKS ***/
+
 a, a:link, a:visited, a:hover { text-decoration: none; font-weight: bold; }
-/*** ***/
+
+/*** END LINKS***/
 
 /*** LAYOUT SECTIONS ***/
 
@@ -25,10 +27,11 @@ nav ul li {
   width: 260px;
   text-align: center;
   background: #c00 url(../images/overlay-button.png) repeat-x;
+  border: 1px solid #c00;
 }
 nav ul li.selected { background: #c00 url(../images/overlay-button-reverse.png) repeat-x; }
-nav ul li:first-child { margin-left: 90px; -webkit-border-radius: 5px 0 0 5px; -moz-border-radius: 5px 0 0 5px; border-radius: 5px 0 0 5px; }
-nav ul li:last-child { -webkit-border-radius: 0 5px 5px 0; -moz-border-radius: 0 5px 5px 0; border-radius: 0 5px 5px 0; }
+nav ul li:first-child { margin-left: 90px; -webkit-border-radius: 5px 0 0 5px; -moz-border-radius: 5px 0 0 5px; border-radius: 5px 0 0 5px; border-right: none; }
+nav ul li:last-child { -webkit-border-radius: 0 5px 5px 0; -moz-border-radius: 0 5px 5px 0; border-radius: 0 5px 5px 0; border-left: none;  }
 
 nav ul li a {
   display: block;
