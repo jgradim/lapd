@@ -1,9 +1,10 @@
 class Stat < ActiveRecord::Base
 
+  default_scope :order => 'accesses DESC'
+
   def self.find_or_create(url)
     stat = Stat.find_by_url(url)
     stat = Stat.create(:url => url) if !stat
-
     stat
   end
 
