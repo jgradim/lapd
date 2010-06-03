@@ -13,6 +13,7 @@ class HomeController < ApplicationController
   end
   
   def convert
+    @json = Xml2json.convert(params['request-url']) if params['request-url']
     respond_to do |format|
       format.html
     end

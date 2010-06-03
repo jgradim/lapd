@@ -42,3 +42,4 @@ Rails::Initializer.run do |config|
 end
 
 require 'xml/xslt'
+require 'open-uri'

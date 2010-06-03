@@ -1,5 +1,8 @@
-<section>
+<section id="api-converter">
   <form>
     <input type="text" id="request-url" name="request-url" value="<%= params['request-url'] %>" placeholder="http://" />
   </form>
+  <div id="json-result">
+    <%= @json %> 
+  </div>
 </section>
