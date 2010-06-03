@@ -35,7 +35,7 @@ nav ul li a {
 nav ul li:hover  { top: 1px; }
 nav ul li:active { top: 2px; }
 
-section { padding: 10px; }
+section { background: #ccc; padding: 10px; }
 
 /*** END LAYOUT SECTIONS ***/
 
@@ -57,3 +57,14 @@ textarea {
   padding: 0;
   border: 1px solid black;
 }
+
+/*** FORMS ***/
+form { width: 800px; margin: 0 0 0 55px; background: #ddd; }
+input#request-url {
+  width: 100%;
+  padding: 15px;
+  margin: 0 auto;
+  border: none;
+  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
+}
+/*** END FORMS ***/
