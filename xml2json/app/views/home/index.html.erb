@@ -1,8 +1,13 @@
 <section id="top-apis">
   <h2>Top APIs</h2>
-  <ul id="top-apis">
+  <table id="top-apis">
   <% @stats.each do |stat| -%>
-    <li><%= stat.url %>, <%= stat.accesses %></li>
+    <tr>
+      <td><%= stat.url %></td>
+      <td><%= stat.accesses %></td>
+    </tr>
   <% end -%>
-  </ul>
+  </table>
+
 </section>
+
