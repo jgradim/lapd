@@ -42,7 +42,7 @@ nav ul li a {
   padding: 15px 0;
   color: #fff;
   font-size: 1.3em;
-	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
 }
 
 section { padding: 10px; }
