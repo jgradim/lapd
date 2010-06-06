@@ -1,1 +1,3 @@
 config/database.yml
+public/images/apis/*
+!public/images/apis/default.png
