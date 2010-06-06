@@ -1,10 +1,11 @@
 <section id="top-apis">
   <h2>Top APIs</h2>
   <table id="top-apis">
-  <% @stats.each do |stat| -%>
+  <% @apis.each do |api| -%>
     <tr>
-      <td><%= stat.url %></td>
-      <td><%= stat.accesses %></td>
+      <td><%= image_for_api(api) %></td>
+      <td><%= api.url %></td>
+      <td><%= api.accesses %></td>
     </tr>
   <% end -%>
   </table>

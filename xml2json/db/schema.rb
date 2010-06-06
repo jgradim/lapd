@@ -11,7 +11,7 @@
 
 ActiveRecord::Schema.define(:version => 20100603182346) do
 
-  create_table "stats", :force => true do |t|
+  create_table "apis", :force => true do |t|
     t.string   "url",                       :null => false
     t.string   "title"
     t.integer  "accesses",   :default => 0
@@ -20,6 +20,6 @@ ActiveRecord::Schema.define(:version => 20100603182346) do
     t.datetime "updated_at"
   end
 
-  add_index "stats", ["url"], :name => "index_stats_on_url"
+  add_index "apis", ["url"], :name => "index_apis_on_url"
 
 end

@@ -1,6 +1,6 @@
-class CreateStats < ActiveRecord::Migration
+class CreateApis < ActiveRecord::Migration
   def self.up
-    create_table :stats do |t|
+    create_table :apis do |t|
       t.string :url, :null => false
       t.string :title
       t.integer :accesses, :default => 0
@@ -9,12 +9,12 @@ class CreateStats < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :stats, :url
+    add_index :apis, :url
   end
 
   def self.down
-    drop_table :stats
-    remove_index :stats, :url
+    drop_table :apis
+    remove_index :apis, :url
   end
 end
 
