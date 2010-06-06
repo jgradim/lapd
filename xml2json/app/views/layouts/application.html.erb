@@ -20,8 +20,7 @@
       <%= yield %>
       <footer>
         <% if current_user %>
-          Editar APIS |
-          <%= link_to 'Logout', logout_path %>
+          <%= link_to 'Edit APIs', apis_path  %> | <%= link_to 'Logout', logout_path %>
         <% else %>
           <%= link_to 'Admin', login_path %>
         <% end %>

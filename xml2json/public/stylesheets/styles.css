@@ -59,6 +59,8 @@ nav ul li a:visited {
 
 section { padding: 10px; }
 
+footer { padding: 20px; text-align: center; }
+
 /*** END LAYOUT SECTIONS ***/
 
 div#warning {
