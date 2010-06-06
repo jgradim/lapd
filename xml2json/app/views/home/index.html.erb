@@ -4,7 +4,7 @@
   <% @apis.each do |api| -%>
     <tr>
       <td><%= image_for_api(api) %></td>
-      <td><%= api.url %></td>
+      <td><%= link_to api.url, "http://#{api.url}" %></td>
       <td><%= pluralize(api.accesses, "access") %></td>
     </tr>
   <% end -%>

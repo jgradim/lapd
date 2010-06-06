@@ -1,9 +1,9 @@
 <section id="api-converter">
   <form>
-    <input type="text" id="request-url" name="request-url" value="<%= params['request-url'] %>" placeholder="http://" />
+    <input type="text" id="request-url" name="request-url" value="<%= params['request-url'] %>" placeholder="http://" /><input type="submit" id="convert" name="convert" value="Convert!">
   </form>
   <textarea id="json-result">
-    <%= @pretty_json %> 
+    <%= @pretty_json %>
   </textarea>
 </section>
 

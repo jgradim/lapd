@@ -3,7 +3,8 @@ body {
 }
 
 h2 {
-  font: normal normal bold 18px/20px Arial,Helvetica,sans-serif;
+  font: normal normal bold 3em/1em times,"Times New Roman",serif;
+  letter-spacing: -0.05em;
   border-bottom: 1px solid #ccc;
   margin: 0 80px 20px;
 }
@@ -11,6 +12,8 @@ h2 {
 /*** LINKS ***/
 
 a, a:link, a:visited, a:hover { text-decoration: none; font-weight: bold; }
+a, a:link { color: #c00; }
+a:hover { color: #888; }
 
 /*** END LINKS***/
 
@@ -34,6 +37,7 @@ nav ul li {
   text-align: center;
   background: #c00 url(../images/overlay-button.png) repeat-x;
   border: 1px solid #c00;
+  letter-spacing: -0.017em;
 }
 
 
@@ -43,7 +47,9 @@ nav ul li:last-child { -webkit-border-radius: 0 5px 5px 0; -moz-border-radius: 0
 nav ul li:hover { background: #c00 url(../images/overlay-button-hover.png) repeat-x; }
 nav ul li.selected, nav ul li:active { background: #c00 url(../images/overlay-button-reverse.png) repeat-x; }
 
-nav ul li a {
+nav ul li a,
+nav ul li a:link,
+nav ul li a:visited {
   display: block;
   padding: 15px 0;
   color: #fff;
@@ -76,10 +82,12 @@ textarea {
 
 /*** FORMS ***/
 
-form { width: 800px; margin: 0 0 0 55px; }
+form { width: 800px; margin: 0 auto; }
+
+input { font-family: Arial,Helvetica,sans-serif; }
 
 input#request-url {
-  width: 100%;
+  width: 600px;
   padding: 15px;
   margin: 0 auto;
   border: 1px solid #ddd;
@@ -88,10 +96,27 @@ input#request-url {
   -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
 }
 
-section#api-converter textarea#json-result {
-  width: 830px;
-  margin: 20px 0 0 55px;
+input#convert {
+  width: 160px;
+  height: 50px;
+  padding: 14px 0 16px;
+  margin-left: 8px;
+  background: #c00 url(../images/overlay-button.png) repeat-x;
+  border: 1px solid #c00;
+  color: #fff;
+  font: normal normal bold 1.3em/15px Arial,Helvetica,sans-serif;
+  text-align: center;
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
+  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
 }
+
+section#api-converter textarea#json-result {
+  width: 798px;
+  margin: 20px 0 0 70px;
+}
+textarea#xml-source  { background: #fff url(../images/xml_b.png) no-repeat 97% 3%; }
+textarea#json-result { background: #fff url(../images/json_b.png) no-repeat 97% 3%; }
+input.placeholder { color: #a9a9a9; }
 
 /*** END FORMS ***/
 
@@ -101,7 +126,8 @@ table tr td {
   height: 32px;
   line-height: 32px;
   padding: 5px 10px;
-  font: normal normal bold 16px/32px Arial,Helvetica,sans-serif;
+  font: normal normal normal 16px/32px Arial,Helvetica,sans-serif;
+  letter-spacing: -0.05em;
   vertical-align: top;
 }
 /*** END TABLES ***/
