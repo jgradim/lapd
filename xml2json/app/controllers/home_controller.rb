@@ -23,6 +23,7 @@ class HomeController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render :text => @json }
+      format.js   { render :text => @json }
     end
   end
 
