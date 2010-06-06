@@ -3,8 +3,8 @@
   <table id="top-apis">
   <% @apis.each do |api| -%>
     <tr>
-      <td><%= image_for_api(api) %></td>
-      <td><%= link_to api.url, "http://#{api.url}" %></td>
+      <td><%= image_tag api.image.url %></td>
+      <td><%= link_to api.title_or_url, "http://#{api.url}" %></td>
       <td><%= pluralize(api.accesses, "access") %></td>
     </tr>
   <% end -%>

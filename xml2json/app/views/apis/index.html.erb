@@ -14,7 +14,7 @@
       <td><%=h api.title %></td>
       <td><%=h api.url %></td>
       <td><%=h api.accesses %></td>
-      <td><%= image_for_api(api) %></td>
+      <td><%= image_tag api.image.url %></td>
       <td><%= link_to 'Edit', edit_api_path(api) %></td>
     </tr>
   <% end %>
