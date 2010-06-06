@@ -1,23 +1,23 @@
-<h1>Listing apis</h1>
+<section id="edit-apis">
+  <h1>Edit APIs</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Url</th>
-    <th>Accesses</th>
-    <th>Image</th>
-  </tr>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Url</th>
+      <th>Accesses</th>
+      <th>Image</th>
+    </tr>
 
-<% @apis.each do |api| %>
-  <tr>
-    <td><%=h api.title %></td>
-    <td><%=h api.url %></td>
-    <td><%=h api.accesses %></td>
-    <td><%= image_for_api(api) %></td>
-    <td><%= link_to 'Edit', edit_api_path(api) %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+  <% @apis.each do |api| %>
+    <tr>
+      <td><%=h api.title %></td>
+      <td><%=h api.url %></td>
+      <td><%=h api.accesses %></td>
+      <td><%= image_for_api(api) %></td>
+      <td><%= link_to 'Edit', edit_api_path(api) %></td>
+    </tr>
+  <% end %>
+  </table>
+</section>
 

@@ -1,28 +1,20 @@
-<h1>Editing api</h1>
+<section id="edit-api">
+  <h1>Editing API: <%= @api.url %></h1>
 
-<% form_for(@api) do |f| %>
-  <%= f.error_messages %>
+  <% form_for(@api) do |f| %>
+    <%= f.error_messages %>
 
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
-  </p>
-  <p>
-    <%= f.label :accesses %><br />
-    <%= f.text_field :accesses %>
-  </p>
-  <p>
-    <%= f.label :image %><br />
-    <%= f.text_field :image %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', apis_path %>
+    <p>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </p>
+    <p>
+      <%= f.submit 'Update' %>
+    </p>
+  <% end %>
+</section>
 
