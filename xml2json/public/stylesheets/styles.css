@@ -114,7 +114,7 @@ section#api-converter textarea#json-result {
   width: 798px;
   margin: 20px 0 0 70px;
 }
-textarea#xml-source { background: #fff url(../images/xml_b.png) no-repeat 97% 3%; }
+textarea#xml-source  { background: #fff url(../images/xml_b.png) no-repeat 97% 3%; }
 textarea#json-result { background: #fff url(../images/json_b.png) no-repeat 97% 3%; }
 input.placeholder { color: #a9a9a9; }
 
@@ -126,7 +126,7 @@ table tr td {
   height: 32px;
   line-height: 32px;
   padding: 5px 10px;
-  font: normal normal small-caps 16px/32px Arial,Helvetica,sans-serif;
+  font: normal normal normal 16px/32px Arial,Helvetica,sans-serif;
   letter-spacing: -0.05em;
   vertical-align: top;
 }
