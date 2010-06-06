@@ -4,7 +4,6 @@ class CreateApis < ActiveRecord::Migration
       t.string :url, :null => false
       t.string :title
       t.integer :accesses, :default => 0
-      t.string :image
 
       t.timestamps
     end

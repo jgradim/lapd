@@ -9,18 +9,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100606163413) do
+ActiveRecord::Schema.define(:version => 20100606213739) do
 
   create_table "apis", :force => true do |t|
-    t.string   "url",                       :null => false
+    t.string   "url",                               :null => false
     t.string   "title"
-    t.integer  "accesses",   :default => 0
-    t.string   "image"
+    t.integer  "accesses",           :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "apis", ["url"], :name => "index_apis_on_url"
+
+  create_table "user_sessions", :force => true do |t|
+    t.string   "username"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"

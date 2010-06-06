@@ -1,5 +1,6 @@
 class Api < ActiveRecord::Base
 
+  has_attached_file :image
   default_scope :order => 'accesses DESC'
 
   def self.find_or_create(url)

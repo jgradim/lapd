@@ -1,6 +1,6 @@
 <h1>Editing api</h1>
 
-<% form_for(@api) do |f| %>
+<% form_for(@api) :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -18,6 +18,9 @@
   <p>
     <%= f.label :image %><br />
     <%= f.text_field :image %>
+  </p>
+  <p>
+    <%= f.file_field :image %>
   </p>
   <p>
     <%= f.submit 'Update' %>
