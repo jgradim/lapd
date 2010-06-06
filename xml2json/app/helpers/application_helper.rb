@@ -6,7 +6,7 @@ module ApplicationHelper
   end
 
   def image_for_api(api, opts = {})
-    api.image.nil? ? image_tag("apis/default.png", opts) : image_tag(api.img, opts)
+    api.image.present? ? image_tag("apis/default.png", opts) : image_tag(api.image, opts)
   end
 end
 

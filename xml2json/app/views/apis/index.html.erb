@@ -1,0 +1,23 @@
+<h1>Listing apis</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Url</th>
+    <th>Accesses</th>
+    <th>Image</th>
+  </tr>
+
+<% @apis.each do |api| %>
+  <tr>
+    <td><%=h api.title %></td>
+    <td><%=h api.url %></td>
+    <td><%=h api.accesses %></td>
+    <td><%=h api.image %></td>
+    <td><%= link_to 'Edit', edit_api_path(api) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
