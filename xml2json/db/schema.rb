@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100606163413) do
+ActiveRecord::Schema.define(:version => 20100606165801) do
 
   create_table "apis", :force => true do |t|
     t.string   "url",                       :null => false
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(:version => 20100606163413) do
   end
 
   add_index "apis", ["url"], :name => "index_apis_on_url"
+
+  create_table "user_sessions", :force => true do |t|
+    t.string   "username"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"
