@@ -5,7 +5,7 @@
     <tr>
       <td><%= image_for_api(api) %></td>
       <td><%= api.url %></td>
-      <td><%= api.accesses %></td>
+      <td><%= pluralize(api.accesses, "access") %></td>
     </tr>
   <% end -%>
   </table>
