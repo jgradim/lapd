@@ -88,10 +88,14 @@ Nuno Polónia\\
 \end{abstract}
 
 \section{Introduction}\label{sec:intro}
-On the newly programmable Web, mashups are flourishing. Designers create mashups by combining components of existing Web sites and applications \cite{maximilien}.
-Because of this, the complexity and usefulness of web services has been increasing exponentially and web services are emerging as a major technology for deploying
-automated interactions between distrib­uted and heterogeneous applications, and for connecting business processes \cite{benslimane}
+On the newly programmable Web, mashups are flourishing. Designers create mashups by combining components of existing Web sites and applications \cite{maximilien}. The complexity and usefulness of web services has been increasing exponentially making them emerge as a major technology for companies and individuals \cite{benslimane}.
 
+This exchange of data and functionalities between web services is powered by API's which are abstract interfaces to the applications. They usually receive HTTP requests and return the information in an XML dialect.
+
+With the incredible advances on Javascript Engines rendering speeds and the extensive use of AJAX by web applications, JSON is becoming the prefered API output language by developers both because it can be parsed by Javascript's eval function.
+
+% NAO SEI ATE QUE PONTO EXPRESSAR 1a OPINIÃO É CORRECTO
+Unfortunately some of the most used API's only provide an XML dialect output, so the objective of this project is to create a web application that acts as a proxy for any API, transforming the XML output into JSON.
 
 
 
@@ -127,8 +131,16 @@ Figure \ref{fig:system_arch} represents this architecture.
 The application was implemented using the Ruby programming language and the Ruby on Rails framework for the backend, and HTML5, CSS 2/3 and JavaScript for the frontend.
 
 \section{Results}\label{sec:results}
+% ACHO QUE ISTO ESTÁ MAL EXPLICADO MAS ESTOU A TER DIFICULDADES EM EXPLICAR MELHOR
+In order to overcome some quirks in the translation from XML to JSON some structural changes had to be made to maintain the data integrity.
+
+The User Requirements for this application were completely fulfilled without any known bug in the translation of several API's output.
 
 \section{Final Remarks}\label{sec:final-remarks}
+
+
+\section{Future Work}\label{sec:future-work}
+The next step will be to fully document all the idiosyncrasies of the XML translation into JSON and turn the statistics module into a monitoring module in order to get more data in bugs that might arise with the addition of newer API\'s.
 
 %% auto bibliographic list
 \renewcommand{\bibname}{References}
