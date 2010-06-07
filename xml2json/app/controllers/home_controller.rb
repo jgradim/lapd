@@ -2,6 +2,7 @@ class HomeController < ApplicationController
 
   rescue_from XML::XSLT::ParsingError, :with => :invalid_xml
   rescue_from OpenURI::HTTPError, :with => :open_uri
+  rescue_from URI::InvalidURIError, :with => :invalid_uri
 
   def index
     @apis = Api.all
@@ -44,6 +45,16 @@ class HomeController < ApplicationController
   def open_uri
     Api.revert_access(params['request-url']) if params['request-url']
     flash[:message] = "Error opening XML document"
+    respond_to do |format|
+      format.html { redirect_to convert_url }
+      format.json { render :json => false }
+      format.js   { render :json => false }
+    end
+  end
+
+  def invalid_uri
+    Api.revert_access(params['request-url']) if params['request-url']
+    flash[:message] = "Invalid URL"
     respond_to do |format|
       format.html { redirect_to convert_url }
       format.json { render :json => false }

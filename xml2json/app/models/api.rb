@@ -21,7 +21,12 @@ class Api < ActiveRecord::Base
   end
 
   def self.access(url)
-    domain_url = URI.parse(url).host
+
+    # parse and validate param URL
+    uri = URI.parse(url)
+    raise URI::InvalidURIError unless uri.scheme and uri.host
+
+    domain_url = uri.host
     api = find_or_create(domain_url)
     api.accesses += 1
     api.save
@@ -30,8 +35,10 @@ class Api < ActiveRecord::Base
   def self.revert_access(url)
     domain_url = URI.parse(url).host
     api = find_by_url(domain_url)
-    api.accesses -= 1
-    api.save
+    if api
+      api.accesses -= 1
+      api.save
+    end
   end
 
   def title_or_url
