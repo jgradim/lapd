@@ -27,7 +27,7 @@ config.action_view.cache_template_loading            = true
 # Enable threaded mode
 # config.threadsafe!
 
-require 'xml/xlst'
+require 'xml/xslt'
 require 'open-uri'
 require 'json/pure'
 
