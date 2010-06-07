@@ -101,6 +101,9 @@ On the newly programmable Web, mashups are flourishing \cite{maximilien}
 \end{itemize}
 
 \subsection{Similar Projects}\label{sec:similar-projects}
+
+Most modern programming languages (such as Ruby and Python) provide support for both XML and JSON formats, either built-in or with 3rd-party libraries, and allow programmers to easily convert between these representations. However, there is not an universal, language-agnostic service that allows programmers to easily convert an XML document to a JSON representation, that ensures that the transformation does not change whichever the programming language used.
+
 \subsection{Architecture}\label{sec:architecture}
 
 As previously stated, xml2json acts primarily as a proxy that translates an XML document to a JSON representation. As such, a user may perform a GET request to the xml2json api converter url \footnote{at the moment of writing, \url{http://xml2json.ath.cx/convert.json}}, specifying the \verb!request-url! parameter --- which corresponds to the location of the XML document they wish to convert to JSON. The application then makes a request to whichever address the user specified, retrieves the XML document, converts it to JSON and finally responds to the user with the JSON representation of the specified XML document. While performing the transformation, the system also saves the access to the database in order to keep track of which APIs have been accessed.
@@ -116,6 +119,7 @@ Figure \ref{fig:system_arch} represents this architecture.
 
 \subsection{Implementation}\label{sec:implementation}
 
+The application was implemented using the Ruby programming language and the Ruby on Rails framework for the backend, and HTML5, CSS 2/3 and JavaScript for the frontend.
 
 \section{Results}\label{sec:results}
 
