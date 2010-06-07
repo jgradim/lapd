@@ -17,7 +17,6 @@
           <li class="<%= selected('convert') %>"><%= link_to "API Converter", convert_path %></li>
         </ul>
       </nav>
-      <div id="flash-message" class="flash">Invalid XML document</div>
       <% flash.each do |name, msg| -%>
         <div id="flash-<%= name %>" class="flash"><%= msg %></div>
       <% end -%>
