@@ -21,22 +21,6 @@
 \clubpenalty=300
 \widowpenalty=300
 
-\usepackage{listings}
-\lstdefinestyle{xml}{
-	language=XML,
-	extendedchars=true,
-	inputencoding=latin1,
-	tabsize=4,
-	showstringspaces=false,
-	basicstyle=\scriptsize,
-	keywordstyle=\ttfamily\color{blue},
-	stringstyle=\ttfamily\color{orange},
-	identifierstyle=\ttfamily,
-	commentstyle=\ttfamily\color{darkred},
-	morecomment=[s][\ttfamily\color{javadoc}]{/**}{*/},
-	numbers=left
-}
-
 \usepackage[pdftex]{hyperref}
 \hypersetup{%
     a4paper = true,              % use A4 paper
@@ -92,7 +76,7 @@ On the newly programmable Web, mashups are flourishing. Designers create mashups
 
 This exchange of data and functionalities between web services is powered by API's which are abstract interfaces to the applications. They usually receive HTTP requests and return the information in an XML dialect.
 
-With the incredible advances on Javascript Engines rendering speeds and the extensive use of AJAX by web applications, JSON is becoming the prefered API output language by developers mainly because it corresponds to a native Javascript object.
+With the incredible advances on Javascript Engines rendering speeds and the extensive use of AJAX by web applications, JSON is becoming the preferred API output language by developers mainly because it corresponds to a native Javascript object.
 
 However, some of the most used website APIs only provide output in an custom XML dialect. As such, the main objective of this project is to create a web application that acts as a proxy for any XML API, transforming the XML output into JSON.
 
@@ -133,7 +117,7 @@ The application was implemented using the Ruby programming language and the Ruby
 
 \subsubsection{XSLT Transformation}\label{sec:xslt-transformation}
 
-There are two methods used to apply the transformation to the XML: for the api converter, the transformation is processed at the application level, using Ruby and libxml to apply the xml2json stylesheet to an arbitrary XML document. For the live editor, as it would be very costly and inneficient to make a request to the application each time the text on the editor changed, a different approach had to be taken: by taking advantage of the \verb!XSLTProcessor! JavaScript object, it's possible to delegate the transformation to the client's browser, providing a much better response while not overloading the server with requests.
+There are two methods used to apply the transformation to the XML: for the api converter, the transformation is processed at the application level, using Ruby and libxml to apply the xml2json stylesheet to an arbitrary XML document. For the live editor, as it would be very costly and inefficient to make a request to the application each time the text on the editor changed, a different approach had to be taken: by taking advantage of the \verb!XSLTProcessor! JavaScript object, it's possible to delegate the transformation to the client's browser, providing a much better response while not overloading the server with requests.
 
 \section{Results}\label{sec:results}
 % ACHO QUE ISTO ESTÁ MAL EXPLICADO MAS ESTOU A TER DIFICULDADES EM EXPLICAR MELHOR
