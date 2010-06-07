@@ -3,8 +3,8 @@ body {
 }
 
 h1 {
-  font: normal normal bold 3em/1em times,"Times New Roman",serif;
-  letter-spacing: -0.05em;
+	font: normal normal bold 2em/1em Arial,Helvetica,sans-serif;
+	letter-spacing: -0.07em;
   border-bottom: 1px solid #ccc;
   margin: 0 80px 20px;
 }
@@ -19,17 +19,34 @@ a:hover { color: #888; }
 
 /*** END LINKS***/
 
+/*** FLASH MESSAGES ***/
+div.flash {
+  width: 450px;
+  padding: 20px;
+  height: 20px;
+  position: fixed;
+  top: 0;
+  margin-left: 250px;
+  background: #ffc66d url(../images/overlay-button.png) repeat-x;
+	font: normal normal bold 1.3em/1em Arial,Helvetica,sans-serif;
+  text-align: center;
+  color: #c00;
+  border: 1px solid #FBC97B; border-top: none;
+  -webkit-border-radius: 0 0 5px 5px; -moz-border-radius: 0 0 5px 5px; border-radius: 0 0 5px 5px;
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.2);
+}
+/*** END FLASH MESSAGES ***/
+
 /*** LAYOUT SECTIONS ***/
 
 div#wrapper {
   width: 960px;
   margin: 0 auto;
-/*  background: #eee;*/
 }
 
 header { height: 100px; }
 
-nav { height: 100px; }
+nav { height: 70px; }
 
 nav ul li {
   float: left;
@@ -41,7 +58,6 @@ nav ul li {
   border: 1px solid #c00;
   letter-spacing: -0.017em;
 }
-
 
 nav ul li:first-child { margin-left: 90px; -webkit-border-radius: 5px 0 0 5px; -moz-border-radius: 5px 0 0 5px; border-radius: 5px 0 0 5px; border-right: none; }
 nav ul li:last-child { -webkit-border-radius: 0 5px 5px 0; -moz-border-radius: 0 5px 5px 0; border-radius: 0 5px 5px 0; border-left: none;  }
@@ -83,13 +99,6 @@ div#warning {
   font-family: Arial,Helvetica,sans-serif;
   text-align: center;
 }
-textarea {
-  width: 450px;
-  height: 400px;
-  margin: 0 0 0 13px;
-  padding: 0;
-  border: 1px solid #ddd;
-}
 
 /*** FORMS ***/
 
@@ -111,6 +120,14 @@ input[type=text], input[type=password] {
   border: 1px solid #ccc;
   -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;
   background: #fff url(../images/input_bg.gif) no-repeat;
+}
+
+textarea {
+  width: 450px;
+  height: 400px;
+  margin: 0 0 0 13px;
+  padding: 0;
+  border: 1px solid #ddd;
 }
 
 input#request-url {
