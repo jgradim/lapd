@@ -1,6 +1,8 @@
 <section id="what">
   <h1>What is xml2json?</h1>
-  <p></p>
+  <p>xml2json is an <a href="/xml2json.xsl">XSLT stylesheet</a>. Meaning, it's used to transform XML into something else. In this case, the all-sexy JSON format</p>
+  <p>But xml2json is much more. It's also a <%= link_to 'live editor', editor_path  %>, able to perform on-the-fly transformation of any valid XML into a JSON representation.</p>
+  <p>Wait, there's more! You can also convert XML documents from external sources, such as <a href="http://last.fm/">last.fm</a> or <a href="http://musicbrainz.org">musicbrainz</a>, either in the <%= link_to 'API converter page', convert_path %> or through an HTTP GET request directly to <%= link_to convert_url(:format => :json, 'request-url' => ''), convert_url(:format => :json, 'request-url' => '')  %>. Enjoy!</p>
 </section>
 
 <section id="top-apis">

@@ -9,7 +9,7 @@ h1 {
   margin: 0 80px 20px;
 }
 
-p { margin: 10px; }
+p { width: 70%; margin: 10px auto; line-height: 1.5em; }
 
 /*** LINKS ***/
 

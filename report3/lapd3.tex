@@ -98,21 +98,25 @@ However, some of the most used website APIs only provide output in an custom XML
 
 \section{Application}\label{sec:application}
 
+%The project consists of a web application that allows an user transform an XML document to a JSON representation. It provides statistics about the requested APIs, a live editor that allows
+
 \subsection{User Requirements}\label{sec:user-requirements}
 
 \begin{itemize}
     \item The user should be able to transform any XML document to a valid JSON representation
-    \item The user should be able to transform XML to JSON visually (in a compatible browser) or programmatically (through and HTTP GET request)
-    \item The system should provide a live XML to JSON editor, in order to preview the result of a transformation
+    \item The user should be able to transform XML to JSON visually (in a compatible browser) or programmatically (through an HTTP GET request)
+    \item The system should provide a live XML to JSON editor, so that the user is able preview the result of a transformation
+    \item The system should provide statistics about the requested APIs
+    \item The system should be able to recover from errors, informing the user about the error and how it can recover from it
 \end{itemize}
 
 \subsection{Similar Projects}\label{sec:similar-projects}
 
-Most modern programming languages (such as Ruby and Python) provide support for both XML and JSON formats, either built-in or with 3rd-party libraries, and allow programmers to easily convert between these representations. However, there is not an universal, language-agnostic service that allows programmers to easily convert an XML document to a JSON representation, that ensures that the transformation does not change whichever the programming language used.
+Most modern programming languages (such as Ruby and Python) provide support for both XML and JSON formats, either built-in or with 3rd-party libraries, and allow programmers to easily convert between these representations. However, there is not an universal, language-agnostic service that allows programmers to easily convert an XML document to a JSON representation, that ensures that the transformation does not change with the programming language used.
 
 \subsection{Architecture}\label{sec:architecture}
 
-As previously stated, xml2json acts primarily as a proxy that translates an XML document to a JSON representation. As such, a user may perform a GET request to the xml2json api converter url \footnote{at the moment of writing, \url{http://xml2json.ath.cx/convert.json}}, specifying the \verb!request-url! parameter --- which corresponds to the location of the XML document they wish to convert to JSON. The application then makes a request to whichever address the user specified, retrieves the XML document, converts it to JSON and finally responds to the user with the JSON representation of the specified XML document. While performing the transformation, the system also saves the access to the database in order to keep track of which APIs have been accessed.
+As previously stated, xml2json acts primarily as a proxy that transforms an XML document to a JSON representation. As such, a user may perform a GET request to the xml2json api converter url \footnote{at the moment of writing, \url{http://xml2json.ath.cx/convert.json}}, specifying the \verb!request-url! parameter --- which corresponds to the location of the XML document they wish to convert to JSON. The application then makes a request to whichever address the user specified in \verb!request-url!, retrieves the XML document, converts it to JSON and finally responds to the user with the JSON representation of the specified XML document. While performing the transformation, the system also saves the access to the database in order to keep track of which APIs have been accessed.
 
 Figure \ref{fig:system_arch} represents this architecture.
 
@@ -127,13 +131,20 @@ Figure \ref{fig:system_arch} represents this architecture.
 
 The application was implemented using the Ruby programming language and the Ruby on Rails framework for the backend, and HTML5, CSS 2/3 and JavaScript for the frontend.
 
+\subsubsection{XSLT Transformation}\label{sec:xslt-transformation}
+
+There are two methods used to apply the transformation to the XML: for the api converter, the transformation is processed at the application level, using Ruby and libxml to apply the xml2json stylesheet to an arbitrary XML document. For the live editor, as it would be very costly and inneficient to make a request to the application each time the text on the editor changed, a different approach had to be taken: by taking advantage of the \verb!XSLTProcessor! JavaScript object, it's possible to delegate the transformation to the client's browser, providing a much better response while not overloading the server with requests.
+
 \section{Results}\label{sec:results}
 In order to overcome some quirks in the translation from XML to JSON some structural changes had to be made to maintain the data integrity.
 
-The User Requirements for this application were completely fulfilled without any known bug in the translation of several API's output.
+The User Requirements for this application were completely fulfilled without any known bug in the transformation of several XML documents from various sources.
 
 \section{Final Remarks}\label{sec:final-remarks}
 
+XSLT proves to be a very capable and efficient tool to manipulate XML documents. It revealed to be an intuitive XML manipulation tool, allowing for a level of abstraction where the only alternative would be to use a specialized parser, that could reveal itself as excessively heavy or prone to failure in face of certain situations.
+
+XML and XSLT have been widely adopted, with full support for many languages and applications. For this assignment, both Ruby (with libxml bindings) and different JavaScript engines are able to effectively transform XML using XSLT stylesheets.
 
 \section{Future Work}\label{sec:future-work}
 
