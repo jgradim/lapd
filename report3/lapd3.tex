@@ -68,7 +68,7 @@ Nuno Polónia\\
 \thispagestyle{plain}
 
 \begin{abstract}
-
+Nowadays, every web developer uses external API's while developing web applications. The extensive use of AJAX and the astonishing speed of browsers Javascript rendering engines makes JSON a clear, lightweight choice for data interchange. However a lot of API's like the MusicBrainz or Last.fm API don't provide this output. This project aims to provide a solution translating any XML output into JSON without any loss or corruption of information using an XSLT stylesheet and providing an API to do so.
 \end{abstract}
 
 \section{Introduction}\label{sec:intro}
@@ -82,7 +82,7 @@ However, some of the most used website APIs only provide output in an custom XML
 
 \section{Application}\label{sec:application}
 
-%The project consists of a web application that allows an user transform an XML document to a JSON representation. It provides statistics about the requested APIs, a live editor that allows
+The solution consists of a web application that allows an user transform an XML document to a JSON representation. It provides statistics about the requested APIs, a live editor that allows realtime conversion of XML to JSON and a programming interface.
 
 \subsection{User Requirements}\label{sec:user-requirements}
 
@@ -120,7 +120,6 @@ The application was implemented using the Ruby programming language and the Ruby
 There are two methods used to apply the transformation to the XML: for the api converter, the transformation is processed at the application level, using Ruby and libxml to apply the xml2json stylesheet to an arbitrary XML document. For the live editor, as it would be very costly and inefficient to make a request to the application each time the text on the editor changed, a different approach had to be taken: by taking advantage of the \verb!XSLTProcessor! JavaScript object, it's possible to delegate the transformation to the client's browser, providing a much better response while not overloading the server with requests.
 
 \section{Results}\label{sec:results}
-% ACHO QUE ISTO ESTÁ MAL EXPLICADO MAS ESTOU A TER DIFICULDADES EM EXPLICAR MELHOR
 In order to overcome some quirks in the translation from XML to JSON some structural changes had to be made to maintain the data integrity.
 
 The User Requirements for this application were completely fulfilled without any known bug in the transformation of several XML documents from various sources.
