@@ -93,9 +93,15 @@ Nuno Polónia\\
 
 \section{User Requirements}\label{sec:user-requirements}
 
+\begin{itemize}
+    \item The user should be able to transform any XML document to a valid JSON representation
+    \item The user should be able to transform XML to JSON visually (in a compatible browser) or programatically (through and HTTP GET request)
+    \item The system should provide a live XML to JSON editor, in order to preview the result of a transformation
+\end{itemize}
+
 \section{Architecture}\label{sec:architecture}
 
-xml2json acts primarily as a proxy that translates an XML document to a JSON representation. As such
+As previously stated, xml2json acts primarily as a proxy that translates an XML document to a JSON representation. As such, a user may perform a GET request to the xml2json api converter url \footnote{at the moment of writing, \url{http://xml2json.ath.cx/convert.json}}, specifying the \verb!request-url! parameter --- which corresponds to the location of the XML document they wish to convert to JSON. The application then makes a request to whichever address the user specified, retrieves the XML document, converts it to JSON and finally responds to the user with the JSON representation of the specified XML document.
 
 \section{Results}\label{sec:results}
 
