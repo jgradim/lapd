@@ -30,7 +30,7 @@ div.flash {
   background: #ffc66d url(../images/overlay-button.png) repeat-x;
 	font: normal normal bold 1.3em/1em Arial,Helvetica,sans-serif;
   text-align: center;
-  color: #c00;
+  color: #3F382E;
   border: 1px solid #FBC97B; border-top: none;
   -webkit-border-radius: 0 0 5px 5px; -moz-border-radius: 0 0 5px 5px; border-radius: 0 0 5px 5px;
 	text-shadow: 0 -1px 1px rgba(0,0,0,0.2);
@@ -44,7 +44,11 @@ div#wrapper {
   margin: 0 auto;
 }
 
-header { height: 100px; }
+header {
+  height: 120px;
+  text-indent: -99999px;
+  background: url(../images/logo.png) no-repeat center center;
+}
 
 nav { height: 70px; }
 
