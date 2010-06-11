@@ -4,13 +4,7 @@
     <title>xml2json</title>
     <meta charset="utf-8" />
     <%= stylesheet_link_merged :base %>
-    <%= javascript_link_tag 'jquery-1.4.2.min.js' %>
-    <%= javascript_link_tag 'json2.min.js' %>
-    <%= javascript_link_tag 'jquery.textarea.js' %>
-    <%= javascript_link_tag 'modernizr-1.1.min.js' %>
-    <%= javascript_link_tag 'jquery.placeholder.min.js' %>
-    <%= javascript_link_tag 'progressive_enhancement.js' %>
-    <%= javascript_link_tag 'application.js' %>
+    <%= javascript_include_merged :base %>
     <%= yield :extra_head %>
   </head>
   <body>

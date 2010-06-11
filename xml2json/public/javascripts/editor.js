@@ -4,10 +4,14 @@ var dom_parser = new DOMParser();
 $(document).ready(function(){
 
   // import xslt stylesheet for live editor
-  $.get('/xml2json.xsl', function(data) {
-    xslt.importStylesheet(data);
+  $.ajax({
+    url: '/xml2json.xsl',
+    dataType: 'xml',
+    success: function(data) {
+      xslt.importStylesheet(data);
+    }
   });
-  
+
   $("div#warning").css({
     height: $("#json-result").css('height'),
     width: $("#json-result").css('width'),
@@ -15,12 +19,12 @@ $(document).ready(function(){
     left: $("#json-result").offset().left + 1,
     lineHeight: $("#json-result").css('height')
   });
-  
+
   $("#xml-source").bind('keyup', function(ev) {
-  
+
     var xml = dom_parser.parseFromString($(this).val(), "text/xml");
     var result = xslt.transformToFragment(xml, document).textContent;
-    
+
     if(!result.match(/parsererror/)) {
       $("#json-result").val(JSON.stringify(JSON.parse(result), null, "  "));
       $("div#warning").hide();
@@ -29,5 +33,6 @@ $(document).ready(function(){
       $("div#warning").show();
     }
   }).tabby();
-  
+
 });
+
