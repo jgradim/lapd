@@ -8,9 +8,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
 
   # named routes
-  map.editor  '/editor',  :controller => 'home', :action => 'editor'
-  map.editor  '/stylesheet.:format',  :controller => 'home', :action => 'stylesheet'
-  map.convert '/convert.:format', :controller => 'home', :action => 'convert'
+  map.editor      '/editor',  :controller => 'home', :action => 'editor'
+  map.stylesheet  '/stylesheet.:format',  :controller => 'home', :action => 'stylesheet'
+  map.convert     '/convert.:format', :controller => 'home', :action => 'convert'
 
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
