@@ -43,7 +43,7 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end
 
-require 'xml/xslt'
+require 'xml/xslt'  # gem install ruby-xslt
 require 'open-uri'
-require 'json/pure'
+require 'json/pure' # gem install json
 

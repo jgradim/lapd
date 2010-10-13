@@ -17,6 +17,15 @@ class HomeController < ApplicationController
     end
   end
 
+  def stylesheet
+    respond_to do |format|
+      format.js {
+        response.headers['Content-Type'] = 'text/xml'
+        render :xml => File.open("#{RAILS_ROOT}/public/xml2json.xsl").read
+      }
+    end
+  end
+
   def convert
 
     Api.access(params['request-url']) if params['request-url']

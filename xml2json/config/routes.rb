@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
   # resources
-  map.resource :home, :only => :index, :collection => { :editor => :get, :convert => :get }
+  map.resource :home, :only => :index, :collection => { :editor => :get, :convert => :get, :stylesheet => :get }
   map.resources :apis, :only => [:index, :edit, :update]
 
   map.resources :user_sessions
@@ -9,6 +9,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # named routes
   map.editor  '/editor',  :controller => 'home', :action => 'editor'
+  map.editor  '/stylesheet',  :controller => 'home', :action => 'stylesheet'
   map.convert '/convert.:format', :controller => 'home', :action => 'convert'
 
   map.login "login", :controller => "user_sessions", :action => "new"
