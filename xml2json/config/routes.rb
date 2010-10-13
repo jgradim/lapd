@@ -9,7 +9,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # named routes
   map.editor  '/editor',  :controller => 'home', :action => 'editor'
-  map.editor  '/stylesheet',  :controller => 'home', :action => 'stylesheet'
+  map.editor  '/stylesheet.:format',  :controller => 'home', :action => 'stylesheet'
   map.convert '/convert.:format', :controller => 'home', :action => 'convert'
 
   map.login "login", :controller => "user_sessions", :action => "new"

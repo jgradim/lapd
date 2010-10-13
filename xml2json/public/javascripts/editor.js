@@ -5,14 +5,9 @@ $(document).ready(function(){
 
   // import xslt stylesheet for live editor
   $.ajax({
-    url: '/stylesheet',
-    //dataType: 'xml',
+    url: '/stylesheet.js',
     success: function(data) {
-      console.log("success");
       xslt.importStylesheet(data);
-    },
-    error: function() {
-      console.log("Everything went to poop.");
     }
   });
 
