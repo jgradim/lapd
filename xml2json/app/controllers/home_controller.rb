@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
-  rescue_from XML::XSLT::ParsingError, :with => :invalid_xml
+  #rescue_from XML::XSLT::ParsingError, :with => :invalid_xml
   rescue_from OpenURI::HTTPError, :with => :open_uri
   rescue_from URI::InvalidURIError, :with => :invalid_uri
 
