@@ -22,4 +22,5 @@ en:
       httperror: "Error opening XML document"
     uri:
       invalidurierror: "Invalid URL"
+    socketerror: "Error opening XML document"
 

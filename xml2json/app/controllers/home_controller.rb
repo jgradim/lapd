@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   # register exception handlers
-  [JSON::ParserError, OpenURI::HTTPError, URI::InvalidURIError].each do |exception|
+  [JSON::ParserError, OpenURI::HTTPError, URI::InvalidURIError, SocketError].each do |exception|
     rescue_from exception do |e|
       Api.revert_access(params['request-url']) if params['request-url']
       flash[:message] = t(exception.to_i18n_error_key)
