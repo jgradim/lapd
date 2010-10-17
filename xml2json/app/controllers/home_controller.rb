@@ -1,8 +1,17 @@
 class HomeController < ApplicationController
 
-  #rescue_from XML::XSLT::ParsingError, :with => :invalid_xml
-  rescue_from OpenURI::HTTPError, :with => :open_uri
-  rescue_from URI::InvalidURIError, :with => :invalid_uri
+  # register exception handlers
+  [JSON::ParserError, OpenURI::HTTPError, URI::InvalidURIError].each do |exception|
+    rescue_from exception do |e|
+      Api.revert_access(params['request-url']) if params['request-url']
+      flash[:message] = t(exception.to_i18n_error_key)
+      respond_to do |format|
+        format.html { redirect_to convert_url }
+        format.json { render :json => false }
+        format.js   { render :json => false }
+      end
+    end
+  end
 
   def index
     @apis = Api.all
@@ -37,37 +46,6 @@ class HomeController < ApplicationController
       format.html
       format.json { render :text => @json }
       format.js   { render :text => @json }
-    end
-  end
-
-  # Exception handlers
-  def invalid_xml
-    Api.revert_access(params['request-url']) if params['request-url']
-    flash[:message] = "Invalid XML document"
-    respond_to do |format|
-      format.html { redirect_to convert_url }
-      format.json { render :json => false }
-      format.js   { render :json => false }
-    end
-  end
-
-  def open_uri
-    Api.revert_access(params['request-url']) if params['request-url']
-    flash[:message] = "Error opening XML document"
-    respond_to do |format|
-      format.html { redirect_to convert_url }
-      format.json { render :json => false }
-      format.js   { render :json => false }
-    end
-  end
-
-  def invalid_uri
-    Api.revert_access(params['request-url']) if params['request-url']
-    flash[:message] = "Invalid URL"
-    respond_to do |format|
-      format.html { redirect_to convert_url }
-      format.json { render :json => false }
-      format.js   { render :json => false }
     end
   end
 

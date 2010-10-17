@@ -2,4 +2,24 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+
+  api:
+    successfully_updated: "Api was successfully updated."
+
+  user_session:
+    log_in: "Successfully logged in"
+    log_out: "Successfully logged out"
+    need_higher_privileges: "You must be an administrator to access this page"
+
+  user:
+    successfully_updated: "User was successfully updated."
+
+  # exceptions, applicable to all controllers / models
+  exceptions:
+    json:
+      parsererror: "Invalid XML document"
+    openuri:
+      httperror: "Error opening XML document"
+    uri:
+      invalidurierror: "Invalid URL"
+
