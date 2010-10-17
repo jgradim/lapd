@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
 
   def require_user
     unless current_user
-      flash[:notice] = "You must be an admin to access this page"
+      flash[:notice] = t('user_session.need_higher_privileges')
       redirect_to new_user_session_url
       return false
     end

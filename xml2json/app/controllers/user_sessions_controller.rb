@@ -17,7 +17,7 @@ class UserSessionsController < ApplicationController
 
     respond_to do |format|
       if @user_session.save
-        flash[:notice] = 'Successfully logged in.'
+        flash[:notice] = t('user_session.log_in')
         format.html { redirect_to root_url }
         format.xml  { render :xml => @user_session, :status => :created, :location => @user_session }
       else
@@ -32,7 +32,7 @@ class UserSessionsController < ApplicationController
   def destroy
     @user_session = UserSession.find
     @user_session.destroy
-    flash[:notice] = 'Successfully logged out.'
+    flash[:notice] = t('user_session.log_in')
 
     respond_to do |format|
       format.html { redirect_to root_url }

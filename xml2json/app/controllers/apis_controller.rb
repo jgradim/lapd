@@ -24,7 +24,7 @@ class ApisController < ApplicationController
 
     respond_to do |format|
       if @api.update_attributes(params[:api])
-        flash[:notice] = 'Api was successfully updated.'
+        flash[:notice] = t("api.successfully_updated")
         format.html { redirect_to apis_path }
         format.xml  { head :ok }
       else
